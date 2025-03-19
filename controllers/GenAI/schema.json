@@ -1,0 +1,65 @@
+{
+  "type": "object",
+  "properties": {
+    "Title": {
+      "type": "string",
+      "description": "The title of the travel itinerary."
+    },
+    "Activities": {
+      "type": "array",
+      "description": "A list of daily activities for the itinerary.",
+      "items": {
+        "type": "object",
+        "properties": {
+            "day": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The day in the format of yyyy-mm-dd."
+          },
+          "activity": {
+            "type": "array",
+            "description": "List of activities planned for the day.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "place": {
+                  "type": "string",
+                  "description": "Name of the location to visit."
+                },
+                "location": {
+                  "type": "object",
+                  "properties": {
+                    "lat": {
+                      "type": "number",
+                      "description": "Latitude of the location."
+                    },
+                    "lng": {
+                      "type": "number",
+                      "description": "Longitude of the location."
+                    }
+                  },
+                  "required": ["lat", "lng"]
+                },
+                "description": {
+                  "type": "string",
+                  "description": "Description of what to do at the location."
+                }
+              },
+              "required": ["place", "location", "description"]
+            }
+          },
+          "noteForTheDay": {
+            "type": "string",
+            "description": "Additional notes or reminders for the day."
+          }
+        },
+        "required": ["day", "activity"]
+      }
+    },
+    "NoteForItinerary": {
+      "type": "string",
+      "description": "General notes or comments about the itinerary."
+    }
+  },
+  "required": ["Title", "Activities"]
+}
