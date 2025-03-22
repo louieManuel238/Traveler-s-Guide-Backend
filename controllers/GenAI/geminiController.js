@@ -49,8 +49,7 @@ const generateItinerary = async (req, res) => {
     accommodation: ${selectedAccommodation}, transportation: ${selectedTransportation},
     adventure preference: ${selectedAdventures}, dietary restrcitions: ${selectedDietaryRestrictions},
     other requirements, ${selectedSpecialRequirements}.
-    include top attractions. 
-    make the most of the day 
+    include top attractions. Breakdown activity to specific place. 
     `;
    
 

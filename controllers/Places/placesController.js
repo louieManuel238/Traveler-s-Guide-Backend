@@ -35,9 +35,11 @@ const getPlacesLocationforGemini = async (textQuery, location) => {
     request.textQuery = textQuery;
     request.locationBias.circle.center.latitude = location.lat;
     request.locationBias.circle.center.longitude = location.lng;
+    console.log(textQuery)
     try {
         const response = await axios.post(url, request, headers);
-        if (response.data.places[0]) {
+        if (response && response.data.places[0]) {
+            console.log(response.data.places[0])
             return {lat: response.data.places[0].location.latitude, lng: response.data.places[0].location.longitude};
         }
         else{

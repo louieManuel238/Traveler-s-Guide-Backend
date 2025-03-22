@@ -43,6 +43,10 @@
                 "description": {
                   "type": "string",
                   "description": "Description of what to do at the location."
+                },
+                "longDescription":{
+                  "type": "string",
+                  "description": "Information about the place"
                 }
               },
               "required": ["place", "location", "description"]
