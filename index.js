@@ -14,3 +14,5 @@ app.use(express.static('assets'));
 app.use("/api/gemini",geminiRoute);
 app.use("/api/places",placesRoute);
 app.listen(PORT, () => console.log(`App running on port ${PORT}`));
+
+app.get("/",(req, res)=>res.send("Traveler's Guide Server"));
